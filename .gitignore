@@ -1,0 +1,12 @@
+.terraform
+.idea
+terraform.tfvars
+terraform-temp.tfvars
+terraform-temp.tfvars-e
+terraform.tfstate
+terraform.tfstate.*backup
+terraform.tfstate.d
+providers.tf-temp
+.terraform.tfstate.lock.info
+.DS_Store
+.terraform.lock.hcl
