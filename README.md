@@ -1,9 +1,9 @@
-#Kubernetes load balancer exercise
+# Kubernetes load balancer exercise
 
 * Docker image: build simple myapp application, which print the host name on which its running. Navigate to `/app/` and follow instruction to build image. 
 
-###To run complete example exercise. 
-###Prerequisites
+##  To run complete example exercise.
+### Prerequisites
 * install docker 
 * kubernetes 1.13.2
 * install helm v3 
