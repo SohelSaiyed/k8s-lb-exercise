@@ -1,0 +1,33 @@
+name: Terraform Linting
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    name: Check Terraform Formatting & Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0
+
+      - name: Initialize Terraform in the Terraform Directory
+        run: terraform init
+        working-directory: terraform/local
+
+      - name: Check Terraform Formatting
+        run: terraform fmt -check
+        working-directory: terraform/local
+
+      - name: Install TFLint
+        run: |
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+
+      - name: Run TFLint
+        run: tflint
+        working-directory: terraform/local
