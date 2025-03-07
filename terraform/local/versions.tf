@@ -1,8 +1,16 @@
 terraform {
-  required_version = ">= 0.12.0"
   required_providers {
-    external   = ">= 2.0"
-    kubernetes = ">= 1.13.2"
-    helm       = ">= 1.3"
+    external = {
+      source  = "hashicorp/external"
+      version = ">= 2.3.0"
+    }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.22.0"
+    }
+    helm = {
+      source  = "hashicorp/helm"
+      version = ">= 2.11.0"
+    }
   }
 }
