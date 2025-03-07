@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 1.0"  # Adjust the version according to your needs
   required_providers {
     external = {
       source  = "hashicorp/external"
